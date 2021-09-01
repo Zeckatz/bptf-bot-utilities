@@ -160,31 +160,6 @@
             });
           }
 
-          // Add the "Pricecheck Item" button
-          if (!$("#pricecheck-item-button").length) {
-            let pricecheckItemButton = document.createElement("a");
-            pricecheckItemButton.id = "pricecheck-item-button";
-            pricecheckItemButton.className = "btn btn-default btn-xs";
-            pricecheckItemButton.textContent = " PC";
-
-            let priceIcon = document.createElement("i");
-            priceIcon.className = "fa fa-tags";
-
-            let itemCommand = `!pricecheck sku=${itemSKU}`;
-            $(pricecheckItemButton).data("itemCommand", itemCommand);
-            $(priceIcon).data("itemCommand", itemCommand);
-
-            pricecheckItemButton.prepend(priceIcon);
-            $("#bot-utility-elements").append(pricecheckItemButton);
-
-            $("#pricecheck-item-button").on("click", (event) => {
-              GM_setClipboard(
-                $(event.target).data("itemCommand"),
-                "text/plain"
-              );
-            });
-          }
-
           // Add the "Match Listing" button
           if (
             $(hoveredItem).data("listing_intent") &&
