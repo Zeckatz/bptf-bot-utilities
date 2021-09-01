@@ -117,7 +117,10 @@
             let plusIcon = document.createElement("i");
             plusIcon.className = "fa fa-plus";
 
-            let itemCommand = `!add sku=${itemSKU}`;
+            let [keyPrice, metalPrice] = extractPrice($(hoveredItem));
+            let itemCommand = `!add sku=${itemSKU}` + "&autoprice=false&sell.keys=99&sell.metal=0" + `${
+              keyPrice != null ? "&buy.keys=" + keyPrice : ""
+            }${metalPrice != null ? "&buy.metal=" + metalPrice : ""} `;
 
             $(addItemButton).data("itemCommand", itemCommand);
             $(plusIcon).data("itemCommand", itemCommand);
@@ -125,31 +128,6 @@
             $("#bot-utility-elements").append(addItemButton);
 
             $("#add-item-button").on("click", (event) => {
-              GM_setClipboard(
-                $(event.target).data("itemCommand"),
-                "text/plain"
-              );
-            });
-          }
-
-          // Add the "Update Item" button
-          if (!$("#update-item-button").length) {
-            let updateItemButton = document.createElement("a");
-            updateItemButton.id = "update-item-button";
-            updateItemButton.className = "btn btn-default btn-xs";
-            updateItemButton.textContent = " Update";
-
-            let editIcon = document.createElement("i");
-            editIcon.className = "fa fa-edit";
-
-            let itemCommand = `!update sku=${itemSKU}`;
-            $(updateItemButton).data("itemCommand", itemCommand);
-            $(editIcon).data("itemCommand", itemCommand);
-
-            updateItemButton.prepend(editIcon);
-            $("#bot-utility-elements").append(updateItemButton);
-
-            $("#update-item-button").on("click", (event) => {
               GM_setClipboard(
                 $(event.target).data("itemCommand"),
                 "text/plain"
