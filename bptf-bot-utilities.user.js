@@ -118,7 +118,7 @@
             plusIcon.className = "fa fa-plus";
 
             let [keyPrice, metalPrice] = extractPrice($(hoveredItem));
-            let itemCommand = `!add sku=${itemSKU}` + "&autoprice=false&sell.keys=99&sell.metal=0" + `${
+            let itemCommand = `!add sku=${itemSKU}` + "&autoprice=false&sell.keys=199&sell.metal=0" + `${
               keyPrice != null ? "&buy.keys=" + keyPrice : ""
             }${metalPrice != null ? "&buy.metal=" + metalPrice : ""} `;
 
