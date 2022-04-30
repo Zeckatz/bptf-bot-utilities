@@ -7,8 +7,7 @@ If you have any suggestions or bug reports, please create an [Issue](https://git
 If this script helped you out, please feel free to support me by doing the any of the following:
 
 - Become a [⭐Stargazer⭐](https://github.com/Bonfire/bptf-bot-utilities/stargazers)
-
-- <a href="https://www.buymeacoffee.com/bonf" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+- Become a [❤️Sponsor❤️](https://github.com/sponsors/Bonfire)
 
 ## Features
 
@@ -43,6 +42,23 @@ You can also install this script by manually pasting the code found in the above
 _Newly added buttons for easily copying commands are highlighted above_
 
 ## Changelog
+
+**1.0.18**
+
+Fixed:
+
+- Issue with stale KeyData from previous versions
+
+**1.0.17**
+
+Updated:
+
+- Automatic key price fetching to use the autobot.tf API instead of the now-obsolete prices.tf API
+- KeyData storage logging
+
+Fixed:
+
+- KeyData storage
 
 **1.0.16**
 
